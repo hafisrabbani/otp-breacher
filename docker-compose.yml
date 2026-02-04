@@ -1,0 +1,9 @@
+services:
+  otp-app:
+    build: .
+    container_name: tgmdp-otp-service
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    restart: always
