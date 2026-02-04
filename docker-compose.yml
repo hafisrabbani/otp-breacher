@@ -1,9 +1,15 @@
 services:
   otp-app:
     build: .
-    container_name: tgmdp-otp-service
+    container_name: otp-breacher
     ports:
-      - "3000:3000"
+      - "5667:3000"
     env_file:
       - .env
     restart: always
+    networks:
+      - internal_network_dev
+
+networks:
+    internal_network_dev:
+        external: true
