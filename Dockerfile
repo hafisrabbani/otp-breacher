@@ -1,4 +1,4 @@
-FROM node:18-bullseye AS builder
+FROM node:18-bookworm AS builder
 
 RUN apt-get update && apt-get install -y \
     python3 \
@@ -13,7 +13,7 @@ RUN npm install
 
 COPY . .
 
-FROM node:18-bullseye-slim
+FROM node:18-bookworm-slim
 
 RUN apt-get update && apt-get install -y \
     libxml2 \
